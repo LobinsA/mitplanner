@@ -85,9 +85,9 @@ function delay(ms) {
 
 /* -------------------------------------------------------------------------------------------------- */
 /* Button code to test character */
-//var button = document.getElementById("myButton");
-//var outputDiv1 = document.getElementById("output1");
-//button.addEventListener("click", showMessage);
+var button = document.getElementById("myButton");
+var outputDiv1 = document.getElementById("output1");
+button.addEventListener("click", showMessage);
 
 function showMessage() {
   fetchWarcraftLogsData().then((data) => {
@@ -95,16 +95,16 @@ function showMessage() {
     console.log(result);
     // Get a reference to the button element and the output div
     console.log("Async function finished");
-    //outputDiv1.innerHTML = result.name + " " + result.level + " " + result.classID;
+    outputDiv1.innerHTML = result.name + " " + result.level + " " + result.classID;
   });
 }
 
 /* This code is for the call to a specific warcraft Log */
 function getGraphQLData(code) {
-  //var outputDiv2 = document.getElementById("output2");
+  var outputDiv2 = document.getElementById("output2");
   fetchWarcraftLogsDataWithCode(code).then((data) => {
     const result = data.reportData;
-    //outputDiv2.textContent = result;
+    outputDiv2.textContent = result;
     console.log(result);
   });
 }
